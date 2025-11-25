@@ -35,9 +35,15 @@ app.post("/cadastrar", (req, res) => {
 
   database.query(insertCommand, [name, email, password], (error) => {
     if (error) {
+
+      if (error.code === "ER_DUP_ENTRY") {
+        return res.status(400).json({ error: "E-mail já cadastrado!" })
+      }
+
       console.log(error)
       return res.status(500).json({ error: "Erro ao cadastrar usuário" })
     }
+
     res.status(201).json({ message: "Usuário cadastrado com sucesso!" })
   })
 })

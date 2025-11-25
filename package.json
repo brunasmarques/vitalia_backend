@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "dev": "nodemon src/index.js"
-},
-
+    "dev": "nodemon src/index.js"
+  },
   "keywords": [],
   "author": "Bruna, Andressa, Myriã, Rayssa e Nicolas",
   "license": "ISC",
